@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html {
+  background: url("https://res.cloudinary.com/dmqz317kh/image/upload/v1707150330/backgroundgreen_l2io3q.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.content_section {
+  background: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+#waveform {
+  width: 100%;
+  max-width: 100%;
+}
+.controls {
+  margin-top: 1rem;
+}
+.controls button {
+  margin: 1px;
+  border: 1px solid #ccc !important;
+}
+.controls button:hover {
+  background-color: #ececec;
+}
+.audio_info {
+  margin-top: 1rem;
+  color: #fff;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+  font-size: 0.75rem;
+}
