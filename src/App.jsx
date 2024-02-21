@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-
-import CloudinaryTest from "./Components/CloudinaryTest";
+import CloudinaryTest2 from "./Components/CloudinaryTest2";
 
 const App = () => {
   return (
     <div className="content_section w-[90%] mx-auto mt-24 justify-start flex p-4">
       {/* <Restart /> */}
-      <CloudinaryTest />
+      <CloudinaryTest2 />
     </div>
   );
 };
