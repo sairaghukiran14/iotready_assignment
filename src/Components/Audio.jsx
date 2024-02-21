@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import bg from "../assets/load.gif";
 import wave from "../assets/audio_wave.gif";
 
-const CloudinaryTest2 = () => {
+const Audio = () => {
   const [audioFile, setAudioFile] = useState(null);
   const [selectedFile, setSelectedFile] = useState("");
   const audioRef = useRef(null);
@@ -14,8 +14,6 @@ const CloudinaryTest2 = () => {
   );
   const [isloading, setIsloading] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
-
-
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -31,19 +29,15 @@ const CloudinaryTest2 = () => {
   };
   const uploadAudio = () => {
     if (audioFile) {
-      // Create a FormData object to send the file to Cloudinary
       const formData = new FormData();
       formData.append("file", audioFile);
       formData.append("upload_preset", "audio_app");
-
-      // Make a POST request to Cloudinary API
-      fetch("https://api.cloudinary.com/v1_1/dmqz317kh/auto/upload", {
+      fetch(import.meta.env.VITE_CLOUDINARY_URL, {
         method: "POST",
         body: formData,
       })
         .then((response) => response.json())
         .then((data) => {
-          // Set the URL of the uploaded audio in the state
           const newTrack = {
             id: Date.now(),
             name: data.original_filename,
@@ -53,7 +47,6 @@ const CloudinaryTest2 = () => {
 
           console.log(data);
 
-          //   setAudioname(data.original_filename);
           setIsloading(false);
         })
         .catch((error) => {
@@ -91,7 +84,6 @@ const CloudinaryTest2 = () => {
   }, [playlist, currentTrackIndex]);
 
   useEffect(() => {
-    
     if (selectedFile?.length > 0) {
       console.log(audioRef.current, "AUDIO REF");
       audioRef.current.play();
@@ -173,4 +165,4 @@ const CloudinaryTest2 = () => {
   );
 };
 
-export default CloudinaryTest2;
+export default Audio;
